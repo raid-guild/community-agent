@@ -46,13 +46,22 @@ function normalizeBaseUrl(value: string | undefined) {
   return value?.trim().replace(/\/+$/, '') || '';
 }
 
+function resolveDocsDataDir(repoRoot: string) {
+  const explicit = process.env.DOCS_DATA_DIR?.trim();
+  if (explicit) {
+    return path.resolve(explicit);
+  }
+
+  return path.resolve(repoRoot, 'docs/data');
+}
+
 export function loadConfig(): AppConfig {
   if (cachedConfig) {
     return cachedConfig;
   }
 
   const workspaceRoot = process.cwd();
-  const repoRoot = path.resolve(workspaceRoot, '../..');
+  const repoRoot = path.resolve(workspaceRoot, '..');
   const explicitProvider = normalizeProvider(process.env.COMMUNITY_PROVIDER);
   const discordBotToken = process.env.DISCORD_BOT_TOKEN?.trim() || null;
   const slackBotToken = process.env.SLACK_BOT_TOKEN?.trim() || null;
@@ -67,7 +76,7 @@ export function loadConfig(): AppConfig {
   cachedConfig = {
     workspaceRoot,
     repoRoot,
-    docsDataDir: path.resolve(repoRoot, 'cohort-agent/docs/data'),
+    docsDataDir: resolveDocsDataDir(repoRoot),
     dbPath: path.resolve(workspaceRoot, 'data/prism-agent.db'),
     port: Number(process.env.PORT || 4433),
     sessionCookieName: process.env.SESSION_COOKIE_NAME?.trim() || 'prism_agent_session',

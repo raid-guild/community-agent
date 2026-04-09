@@ -1,0 +1,20 @@
+[
+  { "idx": 0, "skill": "Account Manager", "category": "builder" },
+  { "idx": 1, "skill": "Backend Dev", "category": "builder" },
+  { "idx": 2, "skill": "BizDev", "category": "builder" },
+  { "idx": 3, "skill": "Community", "category": "support" },
+  { "idx": 4, "skill": "Content Creator", "category": "support" },
+  { "idx": 5, "skill": "DAO Consultant", "category": "builder" },
+  { "idx": 6, "skill": "Data Science/Analytics", "category": "builder" },
+  { "idx": 7, "skill": "Design", "category": "builder" },
+  { "idx": 8, "skill": "DevOps", "category": "builder" },
+  { "idx": 9, "skill": "Frontend Dev", "category": "builder" },
+  { "idx": 10, "skill": "Internal Ops", "category": "support" },
+  { "idx": 11, "skill": "Legal", "category": "support" },
+  { "idx": 12, "skill": "Marketing", "category": "support" },
+  { "idx": 13, "skill": "New Applicants", "category": "support" },
+  { "idx": 14, "skill": "Project Manager", "category": "builder" },
+  { "idx": 15, "skill": "Smart Contracts", "category": "builder" },
+  { "idx": 16, "skill": "Treasury", "category": "support" },
+  { "idx": 17, "skill": "UX/User Testing", "category": "builder" }
+]

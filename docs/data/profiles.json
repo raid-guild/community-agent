@@ -1,0 +1,884 @@
+[
+    {
+        "idx": 0,
+        "user_id": "5e238c47-37b1-4754-adf2-4753403674be",
+        "handle": "_ieatbabies_",
+        "display_name": "Pupcakes",
+        "bio": "🍕",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "raidguild@pupcakes.me",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Frontend Dev"
+        ],
+        "roles": [
+            "Warrior",
+            "Paladin"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-12 15:07:12.697494+00",
+        "updated_at": "2026-03-13 12:55:08.220983+00"
+    },
+    {
+        "idx": 1,
+        "user_id": "13708d82-09ae-4d67-b6fa-fc1e42a1c6fb",
+        "handle": "0",
+        "display_name": "0",
+        "bio": "0",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/13708d82-09ae-4d67-b6fa-fc1e42a1c6fb/avatar.jpg",
+        "wallet_address": null,
+        "email": "bsrfsrf32@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev"
+        ],
+        "roles": [
+            "Paladin"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-25 19:06:12.858856+00",
+        "updated_at": "2026-03-10 22:01:27.909239+00"
+    },
+    {
+        "idx": 2,
+        "user_id": "e7bf5f0a-62bf-4104-8066-ee1b4843c102",
+        "handle": "AISHIE",
+        "display_name": "Aishie",
+        "bio": "A student pursuing to learn more about Business Development.",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "aishieee20@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Community",
+            "Content Creator",
+            "Marketing"
+        ],
+        "roles": [
+            "Scribe",
+            "Bard"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-04 05:41:12.868778+00",
+        "updated_at": "2026-03-04 05:42:08.47146+00"
+    },
+    {
+        "idx": 3,
+        "user_id": "7cf5c7a2-019f-4c56-979d-d6ef430ed299",
+        "handle": "aphilos9",
+        "display_name": "Sean M. Gonzalez",
+        "bio": "BD, dev, applied philosopher",
+        "avatar_url": null,
+        "wallet_address": "0x684e721008565957365fd4f9d63819a3deef909a",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "BizDev",
+            "Community",
+            "Data Science/Analytics",
+            "Legal",
+            "Project Manager",
+            "Smart Contracts"
+        ],
+        "roles": [
+            "Wizard",
+            "Hunter"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-17 21:16:17.936785+00",
+        "updated_at": "2026-02-26 20:41:38.34054+00"
+    },
+    {
+        "idx": 4,
+        "user_id": "d651a23a-c886-4296-97a0-c999706174a8",
+        "handle": "brur",
+        "display_name": "Mattias H",
+        "bio": "I'm a full-stack developer and AI specialist based in Mallorca, Spain. Swedish background, 35, and I split my time between building AI-powered tools for organizations, moderating one of YouTube's largest AI communities, and running a governance-first AI consultancy with my co-founder.\n\nDay to day I work across Python, TypeScript, Node.js, and React. I build automation pipelines, AI agent systems, and internal tools that connect LLMs to real business workflows. My stack leans heavily on API integrations, webhook architectures, and self-hosted infrastructure. I've built everything from multi-agent orchestration systems to community analytics dashboards to automated intelligence engines that process hundreds of data sources.\n\nI'm here because I want to understand blockchain at a technical level, not just conceptually. I can write code, I can ship things, and I want to build with this technology the same way I build with AI: hands-on, practical, and focused on real problems.",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/d651a23a-c886-4296-97a0-c999706174a8/avatar.jpg",
+        "wallet_address": null,
+        "email": "mattias@aitappers.io",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Community",
+            "DevOps"
+        ],
+        "roles": [
+            "Necromancer",
+            "Tavern Keeper"
+        ],
+        "location": "Spainca,",
+        "contact": null,
+        "created_at": "2026-03-06 20:14:39.155487+00",
+        "updated_at": "2026-03-06 20:26:00.781795+00"
+    },
+    {
+        "idx": 5,
+        "user_id": "9a98f7da-0e85-4baa-81dd-6a247212321a",
+        "handle": "Championyrn",
+        "display_name": "Solomon",
+        "bio": "I’m a tech enthusiast and content creator who enjoys turning complex ideas into clear, engaging content. I like working on innovative projects and helping teams connect with real users. I’m especially interested in building opportunities that create more access and growth for tech communities",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "ajayiadeola400@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Community",
+            "Content Creator",
+            "New Applicants",
+            "UX/User Testing"
+        ],
+        "roles": [
+            "Apprentice",
+            "Tavern Keeper"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-24 08:54:31.834308+00",
+        "updated_at": "2026-02-24 08:57:13.828378+00"
+    },
+    {
+        "idx": 6,
+        "user_id": "58ec0e00-ebf4-40ed-9762-b90ad580d42a",
+        "handle": "dekanbro",
+        "display_name": "Dekan",
+        "bio": "Summoner of RaidGuild and host of the cohort",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/58ec0e00-ebf4-40ed-9762-b90ad580d42a/avatar.jpg",
+        "wallet_address": "0xced608aa29bb92185d9b6340adcbfa263dae075b",
+        "email": "dekanbrown@odyssy.io",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Frontend Dev",
+            "Smart Contracts",
+            "DAO Consultant"
+        ],
+        "roles": [
+            "Wizard",
+            "Warrior"
+        ],
+        "location": "remote",
+        "contact": null,
+        "created_at": "2026-01-22 23:36:13.692942+00",
+        "updated_at": "2026-03-20 17:43:27.404538+00"
+    },
+    {
+        "idx": 7,
+        "user_id": "967b265a-d8fd-4aba-88a3-450794455d62",
+        "handle": "delroy",
+        "display_name": "Delroy",
+        "bio": "I'm Delroy. I've been building products for Polygon, Avail, Dydx and Mantra since entering Crypto industry in 2017.",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "ichimarugintaicho@pm.me",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Data Science/Analytics",
+            "Design",
+            "Project Manager",
+            "Internal Ops",
+            "Account Manager",
+            "Community",
+            "BizDev",
+            "DevOps"
+        ],
+        "roles": [
+            "Monk",
+            "Healer"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-30 06:50:01.106115+00",
+        "updated_at": "2026-03-30 06:50:21.075223+00"
+    },
+    {
+        "idx": 8,
+        "user_id": "56003803-4fe4-407e-9110-09c2df683715",
+        "handle": "drizzy",
+        "display_name": "kek kek",
+        "bio": "ur moms a ho",
+        "avatar_url": null,
+        "wallet_address": "0xf172e1668161a0eb51defa0e5eb57bf34e32cb2c",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Account Manager",
+            "BizDev",
+            "Community"
+        ],
+        "roles": [
+            "Cleric",
+            "Paladin"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-18 19:18:23.713854+00",
+        "updated_at": "2026-04-06 14:40:48.227922+00"
+    },
+    {
+        "idx": 9,
+        "user_id": "37d91ed4-af36-4415-b3ef-c38271f15945",
+        "handle": "dysbulic",
+        "display_name": "δυς β.",
+        "bio": "¡WAGMI‼️",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/37d91ed4-af36-4415-b3ef-c38271f15945/avatar.jpg",
+        "wallet_address": "0xeb4e3e9fa819e69e5df4ea35b9c7973062c96de9",
+        "email": "dys@dhappy.org",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Community",
+            "Content Creator",
+            "DevOps",
+            "Frontend Dev",
+            "Smart Contracts",
+            "Design"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": "sᴡ VA, U.S.A.",
+        "contact": null,
+        "created_at": "2026-03-03 03:18:08.812896+00",
+        "updated_at": "2026-03-03 15:03:12.211899+00"
+    },
+    {
+        "idx": 10,
+        "user_id": "a2ff544c-6dd6-4d3d-9282-422c573b3387",
+        "handle": "ecwireless",
+        "display_name": "ECWireless",
+        "bio": "RaidGuild member",
+        "avatar_url": null,
+        "wallet_address": "0x1a9cEe6E1D21c3C09FB83A980EA54299f01920cd",
+        "email": "elliott@coopallc.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "DAO Consultant",
+            "DevOps",
+            "Frontend Dev",
+            "Internal Ops",
+            "Legal",
+            "Project Manager",
+            "Treasury",
+            "UX/User Testing"
+        ],
+        "roles": [
+            "Angry Dwarf",
+            "Monk",
+            "Paladin",
+            "Warrior"
+        ],
+        "location": "The Cloud",
+        "contact": null,
+        "created_at": "2026-01-29 19:38:14.245023+00",
+        "updated_at": "2026-01-29 19:39:58.516756+00"
+    },
+    {
+        "idx": 11,
+        "user_id": "8bfac24e-b1e1-4293-8b3e-d11d263fe782",
+        "handle": "elco8100",
+        "display_name": "Elco",
+        "bio": "I'm shy today.",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/8bfac24e-b1e1-4293-8b3e-d11d263fe782/avatar-generated-1773306956790.png",
+        "wallet_address": null,
+        "email": "elco@thedaoist.gg",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Account Manager",
+            "Community",
+            "BizDev",
+            "Content Creator",
+            "DAO Consultant",
+            "Design",
+            "Marketing",
+            "UX/User Testing"
+        ],
+        "roles": [
+            "Cleric",
+            "Bard"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-04 15:01:37.950966+00",
+        "updated_at": "2026-03-12 09:18:52.639474+00"
+    },
+    {
+        "idx": 12,
+        "user_id": "862df2b1-2a5a-4afe-9e3b-ce41fdb2f8fd",
+        "handle": "eugenPtr",
+        "display_name": "Eugen",
+        "bio": "Top guy",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "eugen.ptr@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Smart Contracts"
+        ],
+        "roles": [
+            "Paladin",
+            "Wizard"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-03 18:12:39.433558+00",
+        "updated_at": "2026-03-03 18:13:22.47044+00"
+    },
+    {
+        "idx": 13,
+        "user_id": "96a77b1c-c681-41be-9045-b5c54bed8170",
+        "handle": "gracious1563",
+        "display_name": "Gracious Igwe",
+        "bio": "Hi, I’m Gracious. I’m a security researcher with a background in smart contract auditing/analysis and on-chain investigations. I specialize on tracing fund flows, investigating exploits and scams, and producing analytical reports that translate onchain activity into quality insights. I’ve worked with various web3 security teams analysing incidents, identifying attack patterns, and researching protocol risks.\nI’m excited to be part of the cohort, and look forward to contributing and collaboration with others.",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/96a77b1c-c681-41be-9045-b5c54bed8170/avatar.jpg",
+        "wallet_address": null,
+        "email": "gracious0901@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Data Science/Analytics",
+            "Smart Contracts"
+        ],
+        "roles": [
+            "Druid",
+            "Wizard"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-15 19:51:16.802494+00",
+        "updated_at": "2026-03-23 14:57:42.506191+00"
+    },
+    {
+        "idx": 14,
+        "user_id": "0f3e5e0d-c804-4bfc-803c-87fcfaa4ba11",
+        "handle": "guy-do-or-die",
+        "display_name": "Egor",
+        "bio": "building",
+        "avatar_url": null,
+        "wallet_address": "0x830bc5551e429ddbc4e9ac78436f8bf13eca8434",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Frontend Dev",
+            "DevOps",
+            "Smart Contracts"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-27 04:05:11.132918+00",
+        "updated_at": "2026-02-27 20:27:05.001644+00"
+    },
+    {
+        "idx": 15,
+        "user_id": "201bb6c6-be09-4344-bd76-97507a9aecbb",
+        "handle": "itslounow",
+        "display_name": "Louchi",
+        "bio": "I know when not to use AI to build a product.",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/201bb6c6-be09-4344-bd76-97507a9aecbb/avatar.jpg",
+        "wallet_address": "0x35b248d06bf280e17d8cbff63c56a58e52a936f1",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Design",
+            "Marketing",
+            "Content Creator"
+        ],
+        "roles": [
+            "Scribe",
+            "Archer"
+        ],
+        "location": "Buenos Aires",
+        "contact": null,
+        "created_at": "2026-03-06 18:33:48.914237+00",
+        "updated_at": "2026-03-06 18:39:44.349685+00"
+    },
+    {
+        "idx": 16,
+        "user_id": "29ef73a9-b12c-4aa0-8b50-7674bfc84d06",
+        "handle": "jarisjames",
+        "display_name": "Jaris James",
+        "bio": "Strategic web3 Marketer & Full-Stack Dev.",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "jaris.careers@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "BizDev",
+            "Content Creator",
+            "Marketing"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-04-07 16:02:36.981549+00",
+        "updated_at": "2026-04-07 21:59:45.178619+00"
+    },
+    {
+        "idx": 17,
+        "user_id": "5e2438c6-fc60-411f-9c87-e89d7608ad80",
+        "handle": "judek9378",
+        "display_name": "Bright",
+        "bio": "I'm a product designer, passionate about good UX and product thinking.",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/5e2438c6-fc60-411f-9c87-e89d7608ad80/avatar.jpg",
+        "wallet_address": null,
+        "email": "kolawolejude0@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Design",
+            "UX/User Testing",
+            "Frontend Dev"
+        ],
+        "roles": [
+            "Ranger",
+            "Archer"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-23 16:05:31.733025+00",
+        "updated_at": "2026-02-23 16:38:17.150032+00"
+    },
+    {
+        "idx": 18,
+        "user_id": "97799f82-60db-41ab-9c28-6e28d757e7fb",
+        "handle": "mcmoodoo",
+        "display_name": "Rashid",
+        "bio": "I’m a Web3/DeFi developer with a background in technical writing. I’ve worked across cybersecurity, industrial IoT, and logistics, including leading API documentation at Palo Alto Networks.\n\nToday, I focus on DeFi and Web3, actively building and participating in global hackathons. You can learn more about my work at https://mcmoodoo.com",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "rashid@mcmoodoo.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Content Creator",
+            "DevOps",
+            "Smart Contracts",
+            "Frontend Dev"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-03 17:51:53.239+00",
+        "updated_at": "2026-03-03 19:29:21.496383+00"
+    },
+    {
+        "idx": 19,
+        "user_id": "d8f67212-7e05-46d1-a28f-d189a3262ca5",
+        "handle": "MrD",
+        "display_name": "Mister De",
+        "bio": "Im a chill dude",
+        "avatar_url": null,
+        "wallet_address": "0xbaf6e57a3940898fd21076b139d4ab231dcbbc5f",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Community",
+            "BizDev"
+        ],
+        "roles": [
+            "Healer",
+            "Hunter"
+        ],
+        "location": "remote",
+        "contact": null,
+        "created_at": "2026-01-22 23:33:45.61193+00",
+        "updated_at": "2026-01-22 23:33:45.61193+00"
+    },
+    {
+        "idx": 20,
+        "user_id": "18ff5df6-bded-4c2a-88da-ebd4ef750601",
+        "handle": "pangle3978",
+        "display_name": "Sebastian",
+        "bio": "Full stack dev, techno cowboy",
+        "avatar_url": null,
+        "wallet_address": "0x139616480c7212f057a9be05f7e559cc4c0e4b17",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Frontend Dev",
+            "Backend Dev"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-03 17:37:26.570852+00",
+        "updated_at": "2026-03-03 17:56:11.087793+00"
+    },
+    {
+        "idx": 21,
+        "user_id": "8cd03917-ee87-4a15-b8a8-081ab348dd12",
+        "handle": "parv3213",
+        "display_name": "Parv",
+        "bio": "〜⁠(⁠꒪⁠꒳⁠꒪⁠)⁠〜",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "parv3213@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Frontend Dev",
+            "Smart Contracts",
+            "Backend Dev"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-04-06 17:44:31.073163+00",
+        "updated_at": "2026-04-06 17:45:09.96594+00"
+    },
+    {
+        "idx": 22,
+        "user_id": "130f7884-207e-4095-a7db-6d56194995a2",
+        "handle": "prism",
+        "display_name": "Prism Agent",
+        "bio": "RaidGuild Dark Factory Agent",
+        "avatar_url": "https://hackmd.io/_uploads/ryV_Ebuobl.png",
+        "wallet_address": null,
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": null,
+        "roles": null,
+        "location": null,
+        "contact": null,
+        "created_at": "2026-04-02 18:53:24.748737+00",
+        "updated_at": "2026-04-02 18:53:24.748737+00"
+    },
+    {
+        "idx": 23,
+        "user_id": "669bac1f-8799-43f4-b1ea-11ee92e005c8",
+        "handle": "Roaring30s",
+        "display_name": "Sebastian",
+        "bio": "Full stack dev and  techno cowboy",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "sebastian.roa@live.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Frontend Dev",
+            "Backend Dev"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": "Daytona, FL",
+        "contact": null,
+        "created_at": "2026-03-02 17:14:07.823253+00",
+        "updated_at": "2026-03-02 19:28:37.407482+00"
+    },
+    {
+        "idx": 24,
+        "user_id": "64eee872-cb6c-488e-bd81-1296ab070da0",
+        "handle": "romietech",
+        "display_name": "Romanee",
+        "bio": "I make things run. COO at an AI startup. Dual degree in MIS and Accounting means I speak both dev and finance — useful when nobody else wants to figure out the tokenomics. Let's build.",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "ivesromanee@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Account Manager",
+            "BizDev",
+            "Internal Ops",
+            "Project Manager"
+        ],
+        "roles": [
+            "Cleric",
+            "Monk"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-27 22:34:00.515679+00",
+        "updated_at": "2026-03-06 20:05:11.457139+00"
+    },
+    {
+        "idx": 25,
+        "user_id": "cf387855-98a4-4e46-a336-94b3b9643d7b",
+        "handle": "santteegt",
+        "display_name": "Santiago",
+        "bio": "d/acc - Full-stack Web3 Dev - Data Engineer",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/cf387855-98a4-4e46-a336-94b3b9643d7b/avatar.jpg",
+        "wallet_address": "0x224aba5d489675a7bd3ce07786fada466b46fa0f",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Data Science/Analytics",
+            "Frontend Dev",
+            "Smart Contracts"
+        ],
+        "roles": [
+            "Druid",
+            "Wizard"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-02 17:25:33.661806+00",
+        "updated_at": "2026-03-08 03:36:44.642964+00"
+    },
+    {
+        "idx": 26,
+        "user_id": "d767a197-7264-489f-8d0d-ab07ecdec174",
+        "handle": "sinachpat",
+        "display_name": "Patrick",
+        "bio": "I'm a product designer",
+        "avatar_url": null,
+        "wallet_address": "0x4acb075efd8540850d0a86c156e2c7778022a9ea",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Frontend Dev",
+            "Design",
+            "UX/User Testing"
+        ],
+        "roles": [
+            "Ranger",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-19 17:58:54.072797+00",
+        "updated_at": "2026-03-19 18:07:55.531235+00"
+    },
+    {
+        "idx": 27,
+        "user_id": "2106e9e9-1520-47aa-bd80-6f56ffef928a",
+        "handle": "skuhl",
+        "display_name": "skuhl",
+        "bio": "Ate with relish the inner organs of beasts and fowls",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/2106e9e9-1520-47aa-bd80-6f56ffef928a/avatar-generated-1769862097837.png",
+        "wallet_address": "0x83ab8e31df35aa3281d630529c6f4bf5ac7f7abf",
+        "email": null,
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Frontend Dev",
+            "DevOps",
+            "Smart Contracts",
+            "Treasury",
+            "DAO Consultant",
+            "Data Science/Analytics",
+            "Project Manager",
+            "Internal Ops"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-01-23 09:15:49.360948+00",
+        "updated_at": "2026-02-27 16:11:02.986203+00"
+    },
+    {
+        "idx": 28,
+        "user_id": "bac0d861-0201-4ca2-8902-7a1c921195c8",
+        "handle": "speedfox",
+        "display_name": "speedfox",
+        "bio": "A junior web3 developer",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "partum.numquid@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Smart Contracts",
+            "UX/User Testing",
+            "Frontend Dev"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-03 09:41:40.179149+00",
+        "updated_at": "2026-03-03 09:43:40.31415+00"
+    },
+    {
+        "idx": 29,
+        "user_id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+        "handle": "staging-cohort-access",
+        "display_name": "Staging Cohort Access",
+        "bio": null,
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "staging-cohort-access@example.com",
+        "links": null,
+        "cohorts": null,
+        "skills": null,
+        "roles": null,
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-24 22:16:13.169607+00",
+        "updated_at": "2026-02-24 22:16:13.169607+00"
+    },
+    {
+        "idx": 30,
+        "user_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+        "handle": "staging-dao-member",
+        "display_name": "Staging DAO Member",
+        "bio": null,
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "staging-dao-member@example.com",
+        "links": null,
+        "cohorts": null,
+        "skills": null,
+        "roles": null,
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-24 22:16:13.169607+00",
+        "updated_at": "2026-02-24 22:16:13.169607+00"
+    },
+    {
+        "idx": 31,
+        "user_id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+        "handle": "staging-no-entitlement",
+        "display_name": "Staging No Entitlement",
+        "bio": null,
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "staging-no-entitlement@example.com",
+        "links": null,
+        "cohorts": null,
+        "skills": null,
+        "roles": null,
+        "location": null,
+        "contact": null,
+        "created_at": "2026-02-24 22:16:13.169607+00",
+        "updated_at": "2026-02-24 22:16:13.169607+00"
+    },
+    {
+        "idx": 32,
+        "user_id": "09cc6744-1ca5-455b-8c97-42eb54c5a87a",
+        "handle": "Suede0619",
+        "display_name": "Suede",
+        "bio": "Designer, builder, reader of rooms. Two decades of making things that work for people, and occasionally breaking things that don't. I have too many interests and not enough time. Curious about everything, loud about nothing.",
+        "avatar_url": "https://rvatqkfhzgdqnmcaurvm.supabase.co/storage/v1/object/public/avatars/09cc6744-1ca5-455b-8c97-42eb54c5a87a/avatar.jpg",
+        "wallet_address": "0xcff878b6673bcbc3525e2c6432d2e9698738ef34",
+        "email": "suede0619@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Design",
+            "Frontend Dev",
+            "Marketing",
+            "Project Manager",
+            "UX/User Testing"
+        ],
+        "roles": [
+            "Archer",
+            "Ranger"
+        ],
+        "location": "Colorado, USA",
+        "contact": null,
+        "created_at": "2026-03-03 22:23:18.476285+00",
+        "updated_at": "2026-03-03 22:28:36.442362+00"
+    },
+    {
+        "idx": 33,
+        "user_id": "57a46ebd-6491-490e-a4f9-9ab14aef47e0",
+        "handle": "thaykor",
+        "display_name": "DarrenM",
+        "bio": "10+ year designer, ux, 2+ year vibe coder",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "darrenrmills@gmail.com",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Backend Dev",
+            "Content Creator",
+            "Design",
+            "Frontend Dev",
+            "UX/User Testing"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": "AZ",
+        "contact": null,
+        "created_at": "2026-04-06 17:42:15.155739+00",
+        "updated_at": "2026-04-06 17:43:09.783506+00"
+    },
+    {
+        "idx": 34,
+        "user_id": "84aec047-372b-4c6b-b7f6-12b0f7217936",
+        "handle": "thecreative",
+        "display_name": "G2",
+        "bio": "Founder of Creative Platform.",
+        "avatar_url": null,
+        "wallet_address": null,
+        "email": "g2@creativeplatform.xyz",
+        "links": null,
+        "cohorts": null,
+        "skills": [
+            "Content Creator",
+            "DAO Consultant",
+            "Frontend Dev",
+            "Backend Dev",
+            "Smart Contracts",
+            "Treasury"
+        ],
+        "roles": [
+            "Paladin",
+            "Warrior"
+        ],
+        "location": null,
+        "contact": null,
+        "created_at": "2026-03-02 17:43:46.4721+00",
+        "updated_at": "2026-03-04 02:42:12.840232+00"
+    }
+]

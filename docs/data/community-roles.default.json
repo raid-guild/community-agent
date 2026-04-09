@@ -1,0 +1,20 @@
+[
+  { "idx": 0, "role": "Angry Dwarf", "type": "Treasury", "description": "For those with skills in accounting, finance, and treasury management.", "category": "support" },
+  { "idx": 1, "role": "Apprentice", "type": "New Applicants", "description": "For those applying to join the DAO, marking them as apprentices.", "category": "support" },
+  { "idx": 2, "role": "Archer", "type": "Design", "description": "For specialists in graphic design, illustration, and visual arts.", "category": "builder" },
+  { "idx": 3, "role": "Bard", "type": "Marketing", "description": "For members who excel in marketing, social media, and community growth.", "category": "support" },
+  { "idx": 4, "role": "Cleric", "type": "Account Manager", "description": "For hybrid communicators or project managers.", "category": "builder" },
+  { "idx": 5, "role": "Druid", "type": "Data Science/Analytics", "description": "For those skilled in research, SEO, and data analysis.", "category": "builder" },
+  { "idx": 6, "role": "Healer", "type": "Internal Ops", "description": "For internal operations managers focused on Guild logistics.", "category": "support" },
+  { "idx": 7, "role": "Hunter", "type": "BizDev", "description": "For business development and sales strategists.", "category": "builder" },
+  { "idx": 8, "role": "Monk", "type": "Project Manager", "description": "For managers skilled in budgeting, planning, and documentation.", "category": "builder" },
+  { "idx": 9, "role": "Mystic Alchemist", "type": "DAO Consultant", "description": "For DAO experts and consultants.", "category": "builder" },
+  { "idx": 10, "role": "Necromancer", "type": "DevOps", "description": "For experts in technical configuration and optimization.", "category": "builder" },
+  { "idx": 11, "role": "Paladin", "type": "Backend Dev", "description": "For developers focused on backend languages like Java, Python, or Node.js.", "category": "builder" },
+  { "idx": 12, "role": "Ranger", "type": "UX/User Testing", "description": "For those who specialize in user experience and usability testing.", "category": "builder" },
+  { "idx": 13, "role": "Rogue", "type": "Legal", "description": "For legal advisors and analysts.", "category": "support" },
+  { "idx": 14, "role": "Scribe", "type": "Content Creator", "description": "For media creators skilled in writing, podcasting, and video production.", "category": "support" },
+  { "idx": 15, "role": "Tavern Keeper", "type": "Community", "description": "For those managing community relations and activities.", "category": "support" },
+  { "idx": 16, "role": "Warrior", "type": "Frontend Dev", "description": "For frontend specialists skilled in React, CSS, HTML, or similar tech.", "category": "builder" },
+  { "idx": 17, "role": "Wizard", "type": "Smart Contracts", "description": "For those skilled in Solidity, Vyper, and other smart contract languages.", "category": "builder" }
+]
