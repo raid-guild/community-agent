@@ -9,7 +9,7 @@ The intended memory skills for this template currently live outside this repo at
 
 Pinned manifest skill references currently available:
 
-- `@pinata/sqlite-sync` – recommended default for SQLite backup/versioning
+- `sqlite sync` → `bafybeifav7f7oaaispwrim74jseeyc6hlwoz6wtnn4fhkepayfedg6qj64`
 - `prism api digest` → `bafybeialphclnsgq3zq4thc4xkfgevd7gycxu2eu4v7nzrniup4xqhly64`
 - `prism api reader` → `bafybeielwueu33nmfozdkmt5tsvgfzvuxnacgwbu65dhc2o6lktg5ukxwa`
 

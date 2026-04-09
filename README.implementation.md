@@ -69,7 +69,7 @@ These services remain separate process and auth boundaries rather than being mer
 6. For the current template, the only required deploy-time inputs are `DISCORD_BOT_TOKEN` and `DISCORD_GUILD_ID`. Prism keys, admin overrides, and downstream agent endpoint settings stay optional until those features are enabled.
 7. Pinata deploys should keep internal service-to-service traffic on loopback when the processes are colocated. The manifest now starts the workspace with `PINATA_USE_AGENT_HOST_PLACEHOLDER=1`, and the build/start scripts export `API_BASE_PATH=/api` and `SITE_BASE_PATH=/site` unless they are already set.
 8. Prism is treated as community memory, not as the application's primary data store and not necessarily as the agent's only continuity layer.
-9. SQLite remains the source of truth for app data, and `@pinata/sqlite-sync` is included as a sensible default for backup/versioning alignment with the Pinata agent UI.
+9. SQLite remains the source of truth for app data, and the sqlite sync skill is pinned in the manifest by CID for backup/versioning alignment with the Pinata agent UI.
 10. Prism skills can be pinned in the manifest by CID. Current pinned refs are for Prism API Digest and Prism API Reader; any additional Prism skills still need vendoring or pinned references before they should be added.
 11. Forum/topic surfaces remain Phase 3 and out of the first implementation pass.
 12. Future Discord bot and Prism memory starter services should remain separate process and route boundaries rather than being merged into the current `/api` surface.

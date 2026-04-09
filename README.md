@@ -2,7 +2,7 @@
 
 Prism Agent is a Pinata template for launching a community agent around your Discord server, member directory, points system, and shared memory layer.
 
-It is built for communities that want more than a chatbot. This template gives you a branded site, a structured API, admin tools, member profiles, badges, leaderboards, and optional Prism memory services so your community can operate like a real product instead of a pile of scripts.
+It is built for communities that want more than a chatbot. This template gives you a branded site, a structured API, admin tools, member profiles, badges, leaderboards, and Prism memory services so your community can operate like a real product instead of a pile of scripts.
 
 ## Why This Template Exists
 
@@ -20,10 +20,10 @@ The result is a better starting point for cohorts, guilds, DAO working groups, r
 - a TypeScript Express API for auth, profiles, points, taxonomy, integrations, and admin flows
 - a Next.js front end with member directory, profile pages, leaderboard, account area, and admin screens
 - runtime-editable site copy in `workspace/data/site-content.json` so you can change branding and navigation without rebuilding the site
-- SQLite as the primary app database with `@pinata/sqlite-sync` included as a sensible backup/versioning skill
-- PM2-managed runtime for the web app and optional services
+- SQLite as the primary app database with the Pinata sqlite sync skill pinned by CID for backup/versioning
+- PM2-managed runtime for the web app and supporting services
 - an optional Discord wrapper service for mention intake and latest-message collection
-- an optional Prism memory service and worker loop for shared community memory
+- a Prism memory API plus an optional worker loop for shared community memory
 
 ## Deploy Shape
 
@@ -72,19 +72,21 @@ bash workspace/scripts/start-all.sh
 
 That startup path uses PM2 and is the closest match to how the template runs in deployment.
 
-## Optional Services
+## Runtime Services
 
 Discord wrapper:
 
 - lives under `workspace/services/discord-bot`
 - handles mention intake and latest-message collection
 - forwards internal chat-response requests into the main app
+- is optional and internal-only by default
 
 Prism memory:
 
 - lives under `workspace/services/prism-memory`
 - exposes `/prism-memory`
-- can run worker jobs on an interval under PM2
+- is part of the default template runtime and public route shape
+- can optionally run worker jobs on an interval under PM2
 - is meant for community memory and retrieval, not as the primary app database
 
 ## First Things To Customize
@@ -94,4 +96,4 @@ After deploy, the usual first edits are:
 1. Update branding and shell copy in the admin content UI at `/site/app/admin/content`.
 2. Adjust seeded profiles, roles, skills, and taxonomy for your community.
 3. Decide whether you want Discord mention replies enabled and wire the downstream agent endpoint if you do.
-4. Decide whether Prism memory should stay off, run passively, or run scheduled workers from day one.
+4. Decide whether Prism memory should run with just the API or also run scheduled workers from day one.
