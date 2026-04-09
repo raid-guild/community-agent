@@ -51,6 +51,8 @@ bash scripts/start-workers.sh
 
 In this Prism Agent template, `scripts/start-workers.sh` is the long-running scheduler entrypoint used by PM2. It waits for the local API, optionally runs a one-time initial backfill, and then triggers `/ops/memory/run` and `/ops/knowledge/run` every `PRISM_WORKER_INTERVAL_MINUTES`.
 
+The template build path bootstraps the Python environment automatically. If the host Python lacks `ensurepip` and `python3 -m venv` fails, `scripts/build-service.sh` falls back to `virtualenv.pyz` so Pinata-style builds do not require `apt install python3-venv`.
+
 ## Collector Model
 
 Collector behavior is configured in `superprism_poc/raidguild/config/space.json`.
