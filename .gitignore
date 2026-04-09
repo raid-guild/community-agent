@@ -1,0 +1,53 @@
+node_modules/
+.env.local
+workspace/data/
+
+# Environment files
+.env
+.env.*
+!.env.example
+!**/.env.example
+!.env*.example
+!**/.env*.example
+
+# Node and frontend build artifacts
+**/node_modules/
+**/.next/
+**/dist/
+**/coverage/
+**/*.tsbuildinfo
+.npm/
+.pnpm-store/
+.yarn/
+
+# Python virtualenvs and caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Logs and local runtime noise
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Prism Agent workspace local state
+workspace/.env.local
+workspace/data/
+workspace/uploads/
+workspace/services/prism-memory/superprism_poc/raidguild/activity/*.jsonl
+workspace/services/prism-memory/superprism_poc/raidguild/buckets/**
+!workspace/services/prism-memory/superprism_poc/raidguild/buckets/.gitkeep
+workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/incoming/**
+!workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/incoming/.gitkeep
+workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/processed/**
+!workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/processed/.gitkeep

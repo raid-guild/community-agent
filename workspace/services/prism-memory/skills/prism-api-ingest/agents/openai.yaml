@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prism API Ingest"
+  short_description: "Write Prism inbox payloads via API"
+  default_prompt: "Use $prism-api-ingest to stage memory or knowledge content into the Prism API with an ingestion-capable key."

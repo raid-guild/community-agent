@@ -1,0 +1,38 @@
+{
+  "name": "prism-agent-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "migrate": "tsx src/cli/migrate.ts",
+    "seed": "tsx src/cli/seed.ts",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "start:runtime": "pm2-runtime start ecosystem.config.cjs",
+    "pm2:start": "pm2 start ecosystem.config.cjs --update-env",
+    "pm2:start:all": "pm2 start ecosystem.config.cjs --update-env",
+    "pm2:reload": "pm2 reload ecosystem.config.cjs --update-env",
+    "pm2:stop": "sh -c 'pm2 delete prism-agent-api >/dev/null 2>&1 || true; pm2 delete prism-agent-site >/dev/null 2>&1 || true; pm2 delete prism-agent-discord-bot >/dev/null 2>&1 || true; pm2 delete prism-agent-prism-memory >/dev/null 2>&1 || true; pm2 delete prism-agent-prism-memory-workers >/dev/null 2>&1 || true'",
+    "pm2:status": "pm2 ls",
+    "pm2:logs": "pm2 logs --lines 100"
+  },
+  "dependencies": {
+    "@types/multer": "^2.1.0",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.8.1",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "multer": "^2.1.1",
+    "pm2": "^6.0.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

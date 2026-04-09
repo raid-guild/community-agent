@@ -1,0 +1,65 @@
+{
+  "$schema": "https://agents.pinata.cloud/schemas/manifest.v1.json",
+  "version": 1,
+  "agent": {
+    "name": "Prism Agent",
+    "description": "Community agent template for Discord-backed profiles, points, and Prism memory",
+    "emoji": "🧭",
+    "vibe": "Structured and pragmatic"
+  },
+  "template": {
+    "slug": "prism-agent",
+    "category": "general",
+    "authorName": "Raid Guild",
+    "tags": ["raidguild", "community", "profiles", "points"]
+  },
+  "secrets": [
+    {
+      "name": "DISCORD_BOT_TOKEN",
+      "description": "Discord bot token for the Discord.js service and mention intake",
+      "required": true
+    },
+    {
+      "name": "DISCORD_GUILD_ID",
+      "description": "Primary Discord guild id used by latest-message collection and Prism memory jobs",
+      "required": true
+    },
+    {
+      "name": "ADMIN_PASSWORD",
+      "description": "Optional admin password override; when omitted the app falls back to its local default",
+      "required": false
+    }
+  ],
+  "skills": [
+    {
+      "clawhub_slug": "@pinata/sqlite-sync"
+    },
+    {
+      "cid": "bafybeialphclnsgq3zq4thc4xkfgevd7gycxu2eu4v7nzrniup4xqhly64"
+    },
+    {
+      "cid": "bafybeielwueu33nmfozdkmt5tsvgfzvuxnacgwbu65dhc2o6lktg5ukxwa"
+    }
+  ],
+  "scripts": {
+    "build": "cd workspace && PINATA_USE_AGENT_HOST_PLACEHOLDER=1 bash ./scripts/build-all.sh",
+    "start": "cd workspace && PINATA_USE_AGENT_HOST_PLACEHOLDER=1 bash ./scripts/start-all.sh"
+  },
+  "routes": [
+    {
+      "port": 4433,
+      "path": "/api",
+      "protected": false
+    },
+    {
+      "port": 3000,
+      "path": "/site",
+      "protected": false
+    },
+    {
+      "port": 8788,
+      "path": "/prism-memory",
+      "protected": false
+    }
+  ]
+}

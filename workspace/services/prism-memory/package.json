@@ -1,0 +1,12 @@
+{
+  "name": "prism-agent-prism-memory",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/build-service.sh",
+    "start": "bash scripts/start-api.sh",
+    "start:workers": "bash scripts/start-workers.sh",
+    "ops:memory": "bash scripts/memory_start.sh",
+    "ops:knowledge": "bash scripts/knowledge_start.sh"
+  }
+}

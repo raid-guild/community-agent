@@ -1,0 +1,24 @@
+{
+  "name": "prism-agent-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0 --port 3000",
+    "dev:site": "SITE_BASE_PATH=/site next dev --hostname 0.0.0.0 --port 3000",
+    "build": "next build",
+    "build:site": "SITE_BASE_PATH=/site next build",
+    "start": "next start --hostname 0.0.0.0 --port 3000",
+    "start:site": "SITE_BASE_PATH=/site next start --hostname 0.0.0.0 --port 3000"
+  },
+  "dependencies": {
+    "next": "16.2.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.3"
+  }
+}

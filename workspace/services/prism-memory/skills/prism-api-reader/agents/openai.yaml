@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prism API Reader"
+  short_description: "Read Prism memory and knowledge via API"
+  default_prompt: "Use $prism-api-reader to answer a question from the Prism Memory API with a read-only key."
