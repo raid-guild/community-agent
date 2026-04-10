@@ -12,6 +12,7 @@
     "build": "tsc -p tsconfig.json",
     "migrate": "tsx src/cli/migrate.ts",
     "seed": "tsx src/cli/seed.ts",
+    "seed:profiles": "tsx src/cli/seed-profiles.ts",
     "start": "node dist/server.js",
     "start:site:runtime": "bash scripts/start-site.sh",
     "start:discord-bot:runtime": "bash scripts/start-discord-bot.sh",

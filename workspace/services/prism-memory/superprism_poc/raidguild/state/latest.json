@@ -1,0 +1,19 @@
+{
+  "domains": {
+    "projects": {
+      "source_path": "state/current/projects.json",
+      "summary": "0 active, 0 watching, 0 inactive, 0 archived.",
+      "updated_at": "2026-04-10T02:11:17Z"
+    }
+  },
+  "generated_at": "2026-04-10T02:11:17Z",
+  "recent_changes": [
+    {
+      "change_type": "updated",
+      "domain": "projects",
+      "source_path": "state/current/projects.json",
+      "summary": "Project state refreshed for 2026-04-09 with 0 active project(s).",
+      "updated_at": "2026-04-10T02:11:17Z"
+    }
+  ]
+}

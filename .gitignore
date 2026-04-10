@@ -51,3 +51,6 @@ workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/incomin
 !workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/incoming/.gitkeep
 workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/processed/**
 !workspace/services/prism-memory/superprism_poc/raidguild/inbox/knowledge/processed/.gitkeep
+
+# Template should not ship private member exports
+docs/data/profiles.json

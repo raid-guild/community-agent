@@ -27,7 +27,8 @@ The workspace now includes a PM2 ecosystem at `workspace/ecosystem.config.cjs`.
 Recommended commands from `workspace/`:
 
 - `npm install` installs dependencies for the API, site, Discord bot, and bundled services through npm workspaces
-- `npm run bootstrap` runs the explicit first-build path: API build, migrate, seed, service prep, and site build
+- `npm run bootstrap` runs the explicit first-build path: API build, migrate, template seed data, service prep, and site build
+- `npm run seed:profiles -- /path/to/profiles.json` imports a private profile export once, outside the template bootstrap path
 - `npm run pm2:start` starts the full stack under the PM2 daemon for local use
 - `npm run pm2:start:all` is a compatibility alias for `npm run pm2:start`
 - `npm run pm2:reload` reloads the current ecosystem after rebuilds or env changes
@@ -35,9 +36,11 @@ Recommended commands from `workspace/`:
 - `npm run pm2:logs` tails logs across the ecosystem
 - `npm run start:runtime` runs `pm2-runtime` in the foreground for container-style startup
 
-The PM2 entrypoints and `scripts/start-all.sh` now share the same startup path: they load `.env` and `.env.local`, run a full-stack runtime preflight, and then start every bundled service together. If required secrets are missing or `npm install` / `npm run bootstrap` has not been run yet, startup fails once with an actionable message instead of entering a PM2 crash loop.
+The PM2 entrypoints and `scripts/start-all.sh` now share the same startup path: they load `.env` and `.env.local`, run a full-stack runtime preflight, resolve the bundled PM2 binaries from `workspace/node_modules/.bin` before falling back to `PATH`, and then start every bundled service together. If required secrets are missing or `npm install` / `npm run bootstrap` has not been run yet, startup fails once with an actionable message instead of entering a PM2 crash loop.
 
-The existing `scripts/start-all.sh` now delegates to `npm run start:runtime`, which is a better fit for the Pinata manifest than the old backgrounded-shell approach.
+The manifest-style `bash scripts/start-all.sh runtime` path no longer requires a global PM2 install as long as workspace dependencies have been installed.
+
+Template bootstrap no longer imports member profile exports from the repo. Keep any production profile export in a private, gitignored location and run `npm run seed:profiles -- /path/to/profiles.json` only when you intentionally want to fold that data into a live deployment.
 
 ## Prism Memory Workers
 

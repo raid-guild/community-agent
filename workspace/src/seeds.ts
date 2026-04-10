@@ -41,6 +41,10 @@ interface ProfileSeedRow {
   updated_at?: string;
 }
 
+interface SeedDatabaseOptions {
+  profilesPath?: string | null;
+}
+
 function slugify(input: string) {
   return input
     .trim()
@@ -55,6 +59,14 @@ function preserveImportedHandle(input: string) {
 
 function readJsonFile<T>(filePath: string) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8')) as T;
+}
+
+function resolveOptionalProfilesPath(input: string | null | undefined) {
+  if (!input?.trim()) {
+    return null;
+  }
+
+  return path.resolve(input.trim());
 }
 
 function ensureUniqueHandle(
@@ -81,17 +93,17 @@ function ensureUniqueHandle(
   }
 }
 
-export async function seedDatabase() {
+export async function seedDatabase(options: SeedDatabaseOptions = {}) {
   const config = loadConfig();
   const db = getDb();
   runMigrations(db);
 
   const skillsPath = path.resolve(config.docsDataDir, 'skills.default.json');
   const communityRolesPath = path.resolve(config.docsDataDir, 'community-roles.default.json');
-  const profilesPath = path.resolve(config.docsDataDir, 'profiles.json');
+  const profilesPath = resolveOptionalProfilesPath(options.profilesPath);
   const skills = readJsonFile<SkillSeedRow[]>(skillsPath);
   const communityRoles = readJsonFile<CommunityRoleSeedRow[]>(communityRolesPath);
-  const profiles = readJsonFile<ProfileSeedRow[]>(profilesPath);
+  const profiles = profilesPath ? readJsonFile<ProfileSeedRow[]>(profilesPath) : [];
   const now = new Date().toISOString();
   const adminPasswordHash = await hash(config.adminPassword, 10);
 
@@ -221,58 +233,60 @@ export async function seedDatabase() {
        ON CONFLICT(user_id, community_role_id) DO NOTHING`,
     );
 
-    for (const profile of profiles) {
-      const userId = profile.user_id?.trim() || randomUUID();
-      const createdAt = profile.created_at || now;
-      const updatedAt = profile.updated_at || createdAt;
-      const handle = ensureUniqueHandle(profile.handle, userId, preserveImportedHandle);
-      const email = profile.email?.trim().toLowerCase() || null;
+    if (profilesPath) {
+      for (const profile of profiles) {
+        const userId = profile.user_id?.trim() || randomUUID();
+        const createdAt = profile.created_at || now;
+        const updatedAt = profile.updated_at || createdAt;
+        const handle = ensureUniqueHandle(profile.handle, userId, preserveImportedHandle);
+        const email = profile.email?.trim().toLowerCase() || null;
 
-      upsertUser.run({
-        id: userId,
-        email,
-        passwordHash: null,
-        createdAt,
-        updatedAt,
-        lastSeenAt: updatedAt,
-        isSeeded: 1,
-      });
+        upsertUser.run({
+          id: userId,
+          email,
+          passwordHash: null,
+          createdAt,
+          updatedAt,
+          lastSeenAt: updatedAt,
+          isSeeded: 1,
+        });
 
-      upsertProfile.run({
-        id: userId,
-        userId,
-        handle,
-        displayName: profile.display_name.trim(),
-        bio: profile.bio || null,
-        avatarUrl: profile.avatar_url || null,
-        walletAddress: profile.wallet_address || null,
-        email,
-        linksJson: JSON.stringify(profile.links ?? []),
-        skillsJson: JSON.stringify(profile.skills ?? []),
-        cohortsJson: JSON.stringify(profile.cohorts ?? []),
-        location: profile.location || null,
-        contactJson: JSON.stringify(profile.contact ?? {}),
-        visibility: 'public',
-        visibilityJson: JSON.stringify({}),
-        seedSource: 'current-site-export',
-        seedExternalId: String(profile.idx ?? userId),
-        seededAt: createdAt,
-        claimedAt: null,
-        createdAt,
-        updatedAt,
-      });
+        upsertProfile.run({
+          id: userId,
+          userId,
+          handle,
+          displayName: profile.display_name.trim(),
+          bio: profile.bio || null,
+          avatarUrl: profile.avatar_url || null,
+          walletAddress: profile.wallet_address || null,
+          email,
+          linksJson: JSON.stringify(profile.links ?? []),
+          skillsJson: JSON.stringify(profile.skills ?? []),
+          cohortsJson: JSON.stringify(profile.cohorts ?? []),
+          location: profile.location || null,
+          contactJson: JSON.stringify(profile.contact ?? {}),
+          visibility: 'public',
+          visibilityJson: JSON.stringify({}),
+          seedSource: 'manual-profile-import',
+          seedExternalId: String(profile.idx ?? userId),
+          seededAt: createdAt,
+          claimedAt: null,
+          createdAt,
+          updatedAt,
+        });
 
-      for (const skillLabel of profile.skills ?? []) {
-        const skillId = skillIds.get(skillLabel);
-        if (skillId) {
-          upsertUserSkill.run(userId, skillId, createdAt);
+        for (const skillLabel of profile.skills ?? []) {
+          const skillId = skillIds.get(skillLabel);
+          if (skillId) {
+            upsertUserSkill.run(userId, skillId, createdAt);
+          }
         }
-      }
 
-      for (const communityRoleLabel of profile.roles ?? []) {
-        const communityRoleId = communityRoleIds.get(communityRoleLabel);
-        if (communityRoleId) {
-          upsertUserCommunityRole.run(userId, communityRoleId, createdAt);
+        for (const communityRoleLabel of profile.roles ?? []) {
+          const communityRoleId = communityRoleIds.get(communityRoleLabel);
+          if (communityRoleId) {
+            upsertUserCommunityRole.run(userId, communityRoleId, createdAt);
+          }
         }
       }
     }
@@ -426,6 +440,7 @@ export async function seedDatabase() {
     skillsSeeded: skills.length,
     communityRolesSeeded: communityRoles.length,
     profilesSeeded: profiles.length,
+    profilesSource: profilesPath,
     adminEmail: config.adminEmail,
   };
 }

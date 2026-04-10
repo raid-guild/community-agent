@@ -38,8 +38,8 @@ load_env_file "$workspace_dir/.env.local"
 load_env_file "$workspace_dir/services/prism-memory/.env"
 
 check_root_runtime() {
-	if [[ ! -x "$workspace_dir/node_modules/.bin/pm2-runtime" ]]; then
-		add_error "Workspace dependencies are missing. Run 'npm install' in workspace/, then 'npm run bootstrap'."
+	if [[ ! -x "$workspace_dir/node_modules/.bin/pm2-runtime" ]] && ! command -v pm2-runtime >/dev/null 2>&1; then
+		add_error "PM2 runtime is missing. Run 'npm install' in workspace/, then 'npm run bootstrap', or install PM2 on PATH."
 	fi
 
 	if [[ ! -f "$workspace_dir/dist/server.js" ]]; then
