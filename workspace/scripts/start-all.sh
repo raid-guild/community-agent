@@ -3,6 +3,7 @@ set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 workspace_dir="$(cd "$script_dir/.." && pwd)"
+mode="${1:-runtime}"
 
 apply_pinata_runtime_defaults() {
 	if [[ "${PINATA_USE_AGENT_HOST_PLACEHOLDER:-0}" != "1" ]]; then
@@ -28,7 +29,20 @@ load_env_file "$workspace_dir/.env.local"
 
 apply_pinata_runtime_defaults
 
-bash "$script_dir/stop-all.sh"
-
 cd "$workspace_dir"
-npm run start:runtime
+
+case "$mode" in
+	runtime)
+		bash "$script_dir/verify-runtime-ready.sh" runtime
+		bash "$script_dir/stop-all.sh"
+		exec pm2-runtime start ecosystem.config.cjs
+		;;
+	daemon)
+		bash "$script_dir/verify-runtime-ready.sh" daemon
+		exec pm2 start ecosystem.config.cjs --update-env
+		;;
+	*)
+		echo "Usage: bash scripts/start-all.sh [runtime|daemon]" >&2
+		exit 1
+		;;
+esac

@@ -106,16 +106,16 @@ If you add another builtin collector key in config without adding code in `commu
 
 Custom collector authoring is documented in `docs/collectors.md` at repo root.
 
-Required environment variables (Discord latest messages collector `discord_latest`):
+Required environment variables (Discord latest messages collector `discord_latest`, disabled by default in starter config):
 
 - `DISCORD_LATEST_URL`
 - `DISCORD_LATEST_KEY`
-- `SPACE_HEAP_ID`
 - `DISCORD_GUILD_ID`
+- `SPACE_HEAP_ID` only if your upstream collector expects heap scoping
 
 Optional environment variables (latest meetings collector `latest_meetings`):
 - `MEETINGS_LATEST_URL`; may point at any HTTP wrapper that returns the payload shape expected by the built-in meetings collector
-- `SPACE_HEAP_ID`
+- `SPACE_HEAP_ID` only if your meetings endpoint expects heap scoping
 
 GitHub backup/push uses `GITHUB_OWNER`, `GITHUB_REPO`, and `GITHUB_TOKEN` (already configured in this environment).
 The CLI autoloads repo-root `.env` values if present.

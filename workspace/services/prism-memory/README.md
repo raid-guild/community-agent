@@ -49,7 +49,7 @@ bash scripts/knowledge_start.sh
 bash scripts/start-workers.sh
 ```
 
-In this Prism Agent template, `scripts/start-workers.sh` is the long-running scheduler entrypoint used by PM2. It waits for the local API, optionally runs a one-time initial backfill, and then triggers `/ops/memory/run` and `/ops/knowledge/run` every `PRISM_WORKER_INTERVAL_MINUTES`.
+In this Prism Agent template, `scripts/start-workers.sh` is the long-running scheduler entrypoint used by PM2. It waits for the local API, runs the configured startup cycle, and then triggers `/ops/memory/run` and `/ops/knowledge/run` every `PRISM_WORKER_INTERVAL_MINUTES`.
 
 The template build path bootstraps the Python environment automatically. If the host Python lacks `ensurepip` and `python3 -m venv` fails, `scripts/build-service.sh` falls back to `virtualenv.pyz` so Pinata-style builds do not require `apt install python3-venv`.
 
@@ -88,23 +88,22 @@ See `docs/collectors.md`.
 
 Collectors (configured in `superprism_poc/raidguild/config/space.json`):
 
-Discord latest messages collector (`discord_latest`):
+Discord latest messages collector (`discord_latest`, disabled by default in the starter config):
 
 - `DISCORD_LATEST_URL`
 - `DISCORD_LATEST_KEY`
-- `SPACE_HEAP_ID`
 - `DISCORD_GUILD_ID`
+- `SPACE_HEAP_ID` only if your upstream Discord collector endpoint requires heap scoping
 
 Latest meetings collector (`latest_meetings`, optional):
 
 - `MEETINGS_LATEST_URL` for any HTTP endpoint that returns the payload shape expected by the built-in `latest_meetings` collector
-- `SPACE_HEAP_ID`
+- `SPACE_HEAP_ID` only if your meetings endpoint expects heap scoping
 
 Other optional environment:
 
 - `PRISM_API_KEY` for the API
 - `PRISM_API_ROOT_PATH` for the HTTP route prefix. Default: `/prism-memory`
-- `PRISM_WORKERS_ENABLED` to disable the PM2-managed worker loop when set to `0`
 - `PRISM_WORKER_INTERVAL_MINUTES` to change the default 30-minute cadence
 - `PRISM_WORKER_INITIAL_BACKFILL_DAYS` to change the one-time startup backfill window. Default: `3`
 - `PRISM_WORKER_RUN_BACKFILL_ON_START=0` to skip the automatic initial backfill

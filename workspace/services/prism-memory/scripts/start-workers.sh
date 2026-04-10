@@ -9,7 +9,6 @@ if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
 Usage: bash scripts/start-workers.sh
 
 Environment:
-  PRISM_WORKERS_ENABLED=1
   PRISM_WORKER_INTERVAL_MINUTES=30
   PRISM_WORKER_INITIAL_BACKFILL_DAYS=3
   PRISM_WORKER_RUN_BACKFILL_ON_START=1

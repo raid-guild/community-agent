@@ -5,7 +5,7 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 workspace_dir="$(cd "$script_dir/.." && pwd)"
 
 npm_install_for_build() {
-	npm install --include=dev
+	npm install --workspaces --include-workspace-root --include=dev
 }
 
 apply_pinata_runtime_defaults() {
@@ -28,20 +28,7 @@ npm run build
 npm run migrate
 npm run seed
 
-for service_dir in "$workspace_dir"/services/*; do
-	if [[ ! -d "$service_dir" || ! -f "$service_dir/package.json" ]]; then
-		continue
-	fi
-
-	cd "$service_dir"
-	npm_install_for_build
-
-	if npm run | grep -q '^  build'; then
-		npm run build
-	fi
-done
-
-cd "$workspace_dir/portfolio-site"
-npm_install_for_build
-rm -rf .next
-npm run build:site
+npm run --workspace services/discord-bot build
+npm run --workspace services/prism-memory build
+rm -rf "$workspace_dir/portfolio-site/.next"
+npm run --workspace portfolio-site build:site

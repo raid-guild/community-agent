@@ -5,7 +5,7 @@
   "collectors": [
     {
       "key": "discord_latest",
-      "enabled": true,
+      "enabled": false,
       "window_minutes": 60,
       "initial_backfill_hours": 72
     },

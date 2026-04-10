@@ -26,6 +26,7 @@ const siteBasePath = normalizeBasePath(process.env.SITE_BASE_PATH, '/site');
 const apiBasePath = normalizeBasePath(process.env.API_BASE_PATH, '/api') || '/api';
 const adminAppOrigin = normalizeOrigin(process.env.ADMIN_APP_ORIGIN)
   || 'http://127.0.0.1:4433';
+const workspaceRoot = path.join(__dirname, '..');
 
 const nextConfig: NextConfig = {
   basePath: siteBasePath || undefined,
@@ -34,7 +35,7 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SITE_BASE_PATH: siteBasePath,
   },
   turbopack: {
-    root: path.join(__dirname),
+    root: workspaceRoot,
   },
   async rewrites() {
     return [
