@@ -35,7 +35,6 @@ require_env_var() {
 
 load_env_file "$workspace_dir/.env"
 load_env_file "$workspace_dir/.env.local"
-load_env_file "$workspace_dir/services/prism-memory/.env"
 
 check_root_runtime() {
 	if [[ ! -x "$workspace_dir/node_modules/.bin/pm2-runtime" ]] && ! command -v pm2-runtime >/dev/null 2>&1; then

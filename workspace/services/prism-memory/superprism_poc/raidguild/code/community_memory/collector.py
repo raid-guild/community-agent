@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import re
 import shutil
+from hashlib import sha256
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from hashlib import sha1
@@ -22,11 +23,25 @@ from .state_manager import StateManager
 from .utils import ensure_dir, from_iso, read_json, to_iso, utc_now, write_json
 
 
+def _derive_shared_token() -> str:
+    explicit = (
+        os.environ.get("PRISM_API_KEY")
+        or os.environ.get("INTERNAL_SERVICE_TOKEN")
+        or os.environ.get("SERVICE_SHARED_TOKEN")
+    )
+    if explicit:
+        return explicit
+
+    admin_password = os.environ.get("ADMIN_PASSWORD") or "changeme"
+    return sha256(
+        f"{admin_password}:prism-agent-internal-service".encode("utf-8")
+    ).hexdigest()
+
+
 @dataclass
 class DiscordEnv:
     url: str
     api_key: str
-    heap_id: str
     guild_id: str
 
     @classmethod
@@ -35,19 +50,16 @@ class DiscordEnv:
             key
             for key in [
                 "DISCORD_LATEST_URL",
-                "DISCORD_LATEST_KEY",
-                "SPACE_HEAP_ID",
                 "DISCORD_GUILD_ID",
             ]
-            if key not in os.environ
+            if not os.environ.get(key)
         ]
         if missing:
             raise RuntimeError(f"Missing required Discord env vars: {', '.join(missing)}")
 
         return cls(
             url=os.environ["DISCORD_LATEST_URL"],
-            api_key=os.environ["DISCORD_LATEST_KEY"],
-            heap_id=os.environ["SPACE_HEAP_ID"],
+            api_key=_derive_shared_token(),
             guild_id=os.environ["DISCORD_GUILD_ID"],
         )
 
@@ -55,25 +67,26 @@ class DiscordEnv:
 @dataclass
 class LatestMeetingsEnv:
     url: str
-    heap_id: str
+    heap_id: str | None
 
     @classmethod
     def from_env(cls) -> "LatestMeetingsEnv":
-        missing = [key for key in ["SPACE_HEAP_ID"] if key not in os.environ]
+        url = os.environ.get(
+            "MEETINGS_LATEST_URL",
+            os.environ.get(
+                "LATEST_MEETINGS_URL",
+                "https://example.com/api/latest-meetings",
+            ),
+        )
+        missing = [key for key, value in [("MEETINGS_LATEST_URL", url)] if not value]
         if missing:
             raise RuntimeError(
                 f"Missing required latest meetings env vars: {', '.join(missing)}"
             )
 
         return cls(
-            url=os.environ.get(
-                "MEETINGS_LATEST_URL",
-                os.environ.get(
-                    "LATEST_MEETINGS_URL",
-                    "https://example.com/api/latest-meetings",
-                ),
-            ),
-            heap_id=os.environ["SPACE_HEAP_ID"],
+            url=url,
+            heap_id=os.environ.get("SPACE_HEAP_ID") or None,
         )
 
 
@@ -245,7 +258,6 @@ class DiscordLatestCollector:
 
     def _fetch_messages(self, since: datetime, until: datetime) -> Dict[str, Any]:
         params = {
-            "heap_id": self.env.heap_id,
             "guild_id": self.env.guild_id,
             "since": to_iso(since),
             "until": to_iso(until),
@@ -694,10 +706,11 @@ class LatestMeetingsCollector:
 
     def _fetch_window(self, since: datetime, until: datetime) -> Any:
         body = {
-            "heap_id": self.env.heap_id,
             "since": to_iso(since),
             "until": to_iso(until),
         }
+        if self.env.heap_id:
+            body["heap_id"] = self.env.heap_id
         req = Request(
             self.env.url,
             data=json.dumps(body).encode("utf-8"),

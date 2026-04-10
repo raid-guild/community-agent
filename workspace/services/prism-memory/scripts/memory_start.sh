@@ -9,6 +9,7 @@ source "$ROOT_DIR/scripts/prism-env.sh"
 load_prism_env
 ensure_prism_python
 export_prism_defaults
+ensure_prism_space_config
 
 TODAY=$(TZ=America/Denver date +%F)
 LOCAL_TIME=$(TZ=America/Denver date +%H:%M)

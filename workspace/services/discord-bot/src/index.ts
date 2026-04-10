@@ -66,7 +66,7 @@ function loadConfig(): WrapperConfig {
     port: Number.isFinite(parsedPort) ? parsedPort : 8790,
     discordToken,
     defaultGuildId: process.env.DISCORD_GUILD_ID?.trim() || null,
-    collectorApiKey: process.env.DISCORD_LATEST_KEY?.trim() || deriveSharedToken(),
+    collectorApiKey: deriveSharedToken(),
     serviceToken: deriveSharedToken(),
     chatResponseUrl:
       process.env.DISCORD_CHAT_RESPONSE_URL?.trim()

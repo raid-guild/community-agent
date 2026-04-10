@@ -9,6 +9,7 @@ cd "$ROOT_DIR"
 load_prism_env
 ensure_prism_python
 export_prism_defaults
+ensure_prism_space_config
 
 exec "$ROOT_DIR/.venv/bin/python" -m community_memory_api.server \
   --host "$PRISM_API_HOST" \

@@ -114,6 +114,8 @@ For deployed environments, treat `PRISM_API_DATA_ROOT/config/space.json` as the 
 
 This keeps the repo portable while allowing each deploy to carry its own Discord category mappings, collector toggles, and knowledge constraints.
 
+In this Prism Agent workspace, the service inherits the workspace env and syncs the live config on startup. The current system only uses the Discord collector plus inbox ingestion; the older meetings collector is not part of the active runtime path.
+
 If important Discord threads are being missed by high-signal digesting, add them to `discord.thread_promotion.thread_ids` in the active `space.json`. The digest will also auto-promote thread activity when it crosses the configured `min_messages` and `min_participants` thresholds.
 
 Example request:
@@ -152,7 +154,6 @@ curl -X PUT \
           "min_participants": 2
         }
       },
-      "meetings": {"bucket": "meetings"},
       "knowledge": {
         "enabled": true,
         "docs_root": "superprism_poc/raidguild/knowledge/kb/docs",

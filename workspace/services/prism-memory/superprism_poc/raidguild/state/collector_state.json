@@ -2,9 +2,5 @@
   "discord_latest": {
     "last_until": null,
     "window_minutes": 60
-  },
-  "latest_meetings": {
-    "last_until": null,
-    "window_minutes": 60
   }
 }

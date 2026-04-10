@@ -4,16 +4,11 @@
   "timezone": "America/Denver",
   "collectors": [
     {
-      "key": "discord_latest",
-      "enabled": false,
+      "type": "builtin",
       "window_minutes": 60,
-      "initial_backfill_hours": 72
-    },
-    {
-      "key": "latest_meetings",
-      "enabled": false,
-      "window_minutes": 60,
-      "initial_backfill_hours": 24
+      "enabled": true,
+      "initial_backfill_hours": 72,
+      "key": "discord_latest"
     },
     {
       "key": "inbox_memory",
@@ -24,14 +19,23 @@
   ],
   "discord": {
     "category_to_bucket": {
-      "684227450955235329": "townsquare",
-      "685273857338376246": "guildhq",
-      "685533846837788672": "raids",
-      "1470894727342723082": "governance",
-      "1009434800676946022": "cohort",
+      "810502461780393994": "internal-services",
+      "759064032018694164": "machine-shop",
+      "898333241143091261": "raid-token",
+      "733040851122651137": "rips",
+      "855063900294217749": "valhalla",
       "1470888731241087128": "agency",
+      "1470884971060400169": "brand",
+      "685273744054157325": "camps",
+      "733838869996241037": "castle-walls",
+      "1009434800676946022": "cohort",
+      "1470894727342723082": "governance",
+      "685273857338376246": "guild-hq",
       "1470885162848882809": "infrastructure",
-      "1470884971060400169": "brand"
+      "724249951005179915": "knowledge",
+      "685533846837788672": "raids",
+      "684227450955235329": "town-square",
+      "1470885369519276204": "valhalla-2"
     },
     "bucket_defaults": {
       "mode": "high_signal"
@@ -161,5 +165,12 @@
     "digest_run_time_local": "17:30",
     "memory_run_time_local": "17:45",
     "github_backup_run_time_local": "18:05"
+  },
+  "_template": {
+    "managed_by": "prism-agent-space-sync",
+    "sync_mode": "auto",
+    "synced_at": "2026-04-10T12:25:40.144Z",
+    "source_guild_id": "684227450204323876",
+    "discord_category_count": 17
   }
 }

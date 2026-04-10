@@ -82,7 +82,7 @@ These services remain separate process and auth boundaries rather than being mer
 - Build site: `SITE_BASE_PATH=/site npm --prefix workspace/portfolio-site run build`
 - Build Discord wrapper: `npm --prefix workspace/services/discord-bot run build`
 - Build Prism memory service: `npm --prefix workspace/services/prism-memory run build`
-- Run manifest-style startup: `bash workspace/scripts/start-all.sh`
+- Run manifest-style startup: `bash workspace/scripts/start-all.sh runtime`
 - Run local backend hot reload: `npm --prefix workspace run dev`
 - Run local site hot reload: `npm --prefix workspace/portfolio-site run dev:site`
 - Run Discord wrapper directly: `DISCORD_BOT_TOKEN=... INTERNAL_SERVICE_TOKEN=... npm --prefix workspace/services/discord-bot run dev`
@@ -103,7 +103,7 @@ For a real Discord bot-token test, keep the local setup explicit:
 7. Leave `DISCORD_AGENT_ENDPOINT` pointed at `http://127.0.0.1:4433/api/internal/agents/discord/openclaw` and set `DISCORD_AGENT_AUTH_TOKEN=$INTERNAL_SERVICE_TOKEN` to keep the Discord handoff boundary inside the local API.
 8. Set `OPENCLAW_AGENT_ENDPOINT` and `OPENCLAW_AGENT_AUTH_TOKEN` so that local adapter can forward into an actual OpenClaw or agent runtime.
 
-`workspace/scripts/start-all.sh` now loads `workspace/.env` and `workspace/.env.local` before starting PM2, so the local manifest-style startup path can pick up those values without exporting them manually.
+`workspace/scripts/start-all.sh` now loads `workspace/.env` and `workspace/.env.local` before starting PM2, so the local manifest-style startup path can pick up those values without exporting them manually. Use `runtime` for container-style foreground execution and `npm --prefix workspace run pm2:start` when you want PM2 daemon persistence in a local shell.
 
 Minimum Discord app setup in the Discord developer portal:
 
@@ -117,7 +117,7 @@ Recommended local verification flow:
 1. Build the services:
    `npm --prefix workspace run build && SITE_BASE_PATH=/site npm --prefix workspace/portfolio-site run build && npm --prefix workspace/services/discord-bot run build && npm --prefix workspace/services/prism-memory run build`
 2. Start the stack:
-   `bash workspace/scripts/start-all.sh`
+   `bash workspace/scripts/start-all.sh runtime`
 3. Check the wrapper health endpoint:
    `curl http://127.0.0.1:8790/health`
 4. Probe latest messages directly:

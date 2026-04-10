@@ -57,7 +57,7 @@ case "$mode" in
 		;;
 	daemon)
 		bash "$script_dir/verify-runtime-ready.sh" daemon
-		exec "$(resolve_runtime_binary pm2)" start ecosystem.config.cjs --update-env
+		exec bash "$script_dir/pm2-ensure.sh"
 		;;
 	*)
 		echo "Usage: bash scripts/start-all.sh [runtime|daemon]" >&2

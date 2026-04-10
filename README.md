@@ -67,10 +67,16 @@ SITE_BASE_PATH=/site npm --prefix workspace/portfolio-site run build
 Start the manifest-style runtime:
 
 ```bash
-bash workspace/scripts/start-all.sh
+bash workspace/scripts/start-all.sh runtime
 ```
 
-That startup path uses PM2 and is the closest match to how the template runs in deployment.
+That startup path uses `pm2-runtime` in the foreground and is the closest match to how the template runs in deployment.
+
+If you want the stack to stay up independently on your local machine, use daemon mode instead:
+
+```bash
+npm --prefix workspace run pm2:start
+```
 
 ## Runtime Services
 

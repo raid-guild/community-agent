@@ -11,7 +11,6 @@ The starter supports three collector modes in `superprism_poc/raidguild/config/s
 Use this for the collectors shipped in the starter:
 
 - `discord_latest`
-- `latest_meetings`
 - `inbox_memory`
 
 Example:

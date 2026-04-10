@@ -43,7 +43,7 @@
   ],
   "scripts": {
     "build": "cd workspace && PINATA_USE_AGENT_HOST_PLACEHOLDER=1 bash ./scripts/build-all.sh",
-    "start": "cd workspace && PINATA_USE_AGENT_HOST_PLACEHOLDER=1 bash ./scripts/start-all.sh"
+    "start": "cd workspace && PINATA_USE_AGENT_HOST_PLACEHOLDER=1 bash ./scripts/start-all.sh runtime"
   },
   "routes": [
     {

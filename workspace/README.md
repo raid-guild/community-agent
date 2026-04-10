@@ -36,7 +36,7 @@ Recommended commands from `workspace/`:
 - `npm run pm2:logs` tails logs across the ecosystem
 - `npm run start:runtime` runs `pm2-runtime` in the foreground for container-style startup
 
-The PM2 entrypoints and `scripts/start-all.sh` now share the same startup path: they load `.env` and `.env.local`, run a full-stack runtime preflight, resolve the bundled PM2 binaries from `workspace/node_modules/.bin` before falling back to `PATH`, and then start every bundled service together. If required secrets are missing or `npm install` / `npm run bootstrap` has not been run yet, startup fails once with an actionable message instead of entering a PM2 crash loop.
+The PM2 entrypoints and `scripts/start-all.sh` now share the same startup path: they load `.env` and `.env.local`, run a full-stack runtime preflight, resolve the bundled PM2 binaries from `workspace/node_modules/.bin` before falling back to `PATH`, and then start every bundled service together. In daemon mode, `scripts/pm2-ensure.sh` now resurrects the saved PM2 process list when available, falls back to `ecosystem.config.cjs` when it is not, and runs `pm2 save --force` afterward so future daemon starts reuse the same PM2 state instead of minting a fresh unsaved daemon. If required secrets are missing or `npm install` / `npm run bootstrap` has not been run yet, startup fails once with an actionable message instead of entering a PM2 crash loop.
 
 The manifest-style `bash scripts/start-all.sh runtime` path no longer requires a global PM2 install as long as workspace dependencies have been installed.
 
@@ -53,5 +53,7 @@ At runtime, PM2 launches a dedicated Prism worker loop alongside the API. Defaul
 - `PRISM_WORKER_RUN_BACKFILL_ON_START=1`
 
 The initial backfill runs only once per active Prism data root and records a marker under `state/runtime/initial-backfill.done`. After that, the worker triggers the live API ops endpoints on the configured cadence.
+
+On startup, Prism now also syncs the active `PRISM_API_DATA_ROOT/config/space.json` before the API and worker loop come up. If `DISCORD_BOT_TOKEN` and `DISCORD_GUILD_ID` are present, the sync generates a live `discord.category_to_bucket` map from the actual guild categories and enables the built-in `discord_latest` collector for first boot. Manual edits remain in place unless the live config is still the starter mapping or you force a refresh with `PRISM_SPACE_CONFIG_REFRESH=1`.
 
 For first-run copy and shell branding, prefer the runtime admin surface at `/app/admin/content`, which persists edits to `workspace/data/site-content.json` without rebuilding the Next site.

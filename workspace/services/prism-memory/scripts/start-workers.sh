@@ -22,6 +22,7 @@ source "$ROOT_DIR/scripts/prism-env.sh"
 load_prism_env
 ensure_prism_python
 export_prism_defaults
+ensure_prism_space_config
 
 log() {
   printf '[prism-workers] %s %s\n' "$(date -Is)" "$*"

@@ -27,8 +27,8 @@ superprism_poc/raidguild/knowledge/  starter evergreen KB scaffold
 
 ## Quick Start
 
-1. Copy `.env.example` to `.env` and fill in the collector credentials you actually use.
-2. Review `superprism_poc/raidguild/config/space.json` and change bucket mappings, tags, and schedule times for your space.
+1. Fill the Prism and Discord settings in `workspace/.env` or `workspace/.env.local`.
+2. Review `superprism_poc/raidguild/config/space.json` only for starter defaults; the bundled Prism scripts now inherit the workspace env and sync the live `PRISM_API_DATA_ROOT/config/space.json` on startup.
 3. Set `PYTHONPATH=superprism_poc/raidguild/code`.
 4. Run the targeted commands from repo root:
 
@@ -57,10 +57,9 @@ The template build path bootstraps the Python environment automatically. If the 
 
 Collector behavior is configured in `superprism_poc/raidguild/config/space.json`.
 
-Built-in collector implementations shipped in the starter:
+Built-in collector implementations shipped in this workspace:
 
 - `discord_latest`
-- `latest_meetings`
 - `inbox_memory`
 
 Additional collector modes now supported:
@@ -72,7 +71,7 @@ What a developer can change without code changes:
 
 - enable or disable any built-in collector
 - change `window_minutes` and `initial_backfill_hours`
-- repoint env-backed endpoints like `DISCORD_LATEST_URL` and `MEETINGS_LATEST_URL`
+- repoint the Discord collector endpoint with `DISCORD_LATEST_URL` when the local wrapper is not used
 - change bucket mappings and defaults in `space.json`
 
 What still requires code changes:
@@ -88,17 +87,10 @@ See `docs/collectors.md`.
 
 Collectors (configured in `superprism_poc/raidguild/config/space.json`):
 
-Discord latest messages collector (`discord_latest`, disabled by default in the starter config):
+Discord latest messages collector (`discord_latest`, auto-enabled on first startup when Discord credentials are present):
 
 - `DISCORD_LATEST_URL`
-- `DISCORD_LATEST_KEY`
 - `DISCORD_GUILD_ID`
-- `SPACE_HEAP_ID` only if your upstream Discord collector endpoint requires heap scoping
-
-Latest meetings collector (`latest_meetings`, optional):
-
-- `MEETINGS_LATEST_URL` for any HTTP endpoint that returns the payload shape expected by the built-in `latest_meetings` collector
-- `SPACE_HEAP_ID` only if your meetings endpoint expects heap scoping
 
 Other optional environment:
 
@@ -108,6 +100,8 @@ Other optional environment:
 - `PRISM_WORKER_INITIAL_BACKFILL_DAYS` to change the one-time startup backfill window. Default: `3`
 - `PRISM_WORKER_RUN_BACKFILL_ON_START=0` to skip the automatic initial backfill
 - `MEMORY_API_URL` if you use `scripts/memory_api_watchdog.sh`
+
+This bundled Prism service does not use its own `.env` anymore. Run it through the workspace scripts so it inherits `workspace/.env` and `workspace/.env.local`.
 
 The API server already supports both `root_path` and strip-prefix handling. With the default config in this template, the intended routed path is `/prism-memory/*`, while direct local calls without the prefix remain accepted for backward compatibility.
 

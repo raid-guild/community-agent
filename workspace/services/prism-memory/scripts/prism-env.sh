@@ -3,6 +3,7 @@ set -euo pipefail
 
 PRISM_SERVICE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PRISM_CODE_ROOT="$PRISM_SERVICE_ROOT/superprism_poc/raidguild/code"
+PRISM_WORKSPACE_ROOT="$(cd "$PRISM_SERVICE_ROOT/../.." && pwd)"
 
 get_prism_active_data_root() {
   if [[ -n "${PRISM_API_DATA_ROOT:-}" ]]; then
@@ -14,10 +15,17 @@ get_prism_active_data_root() {
 }
 
 load_prism_env() {
-  if [[ -f "$PRISM_SERVICE_ROOT/.env" ]]; then
+  if [[ -f "$PRISM_WORKSPACE_ROOT/.env" ]]; then
     set -a
     # shellcheck disable=SC1091
-    source "$PRISM_SERVICE_ROOT/.env"
+    source "$PRISM_WORKSPACE_ROOT/.env"
+    set +a
+  fi
+
+  if [[ -f "$PRISM_WORKSPACE_ROOT/.env.local" ]]; then
+    set -a
+    # shellcheck disable=SC1091
+    source "$PRISM_WORKSPACE_ROOT/.env.local"
     set +a
   fi
 }
@@ -55,5 +63,12 @@ export_prism_defaults() {
   export PRISM_API_DATA_ROOT="${PRISM_API_DATA_ROOT:-$active_data_root}"
   export PRISM_API_KEY="${PRISM_API_KEY:-$shared_token}"
   export DISCORD_LATEST_URL="${DISCORD_LATEST_URL:-http://127.0.0.1:${DISCORD_BOT_PORT:-8790}/discord/latest-messages}"
-  export DISCORD_LATEST_KEY="${DISCORD_LATEST_KEY:-$shared_token}"
+}
+
+ensure_prism_space_config() {
+  if [[ "${PRISM_SYNC_SPACE_CONFIG:-1}" == "0" ]]; then
+    return 0
+  fi
+
+  node "$PRISM_SERVICE_ROOT/scripts/sync-space-config.mjs"
 }

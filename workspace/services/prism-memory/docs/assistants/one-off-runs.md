@@ -21,7 +21,7 @@ sessions_spawn({
 })
 ```
 - Specify the exact stages in `task` (collect/digest/seeds/etc.).
-- Mention any env overrides (e.g., MEETINGS_LATEST_URL) up front.
+- Mention any env overrides up front when you are not using the default workspace runtime.
 
 ### Archivist of the Keep (knowledge lane)
 ```jsonc

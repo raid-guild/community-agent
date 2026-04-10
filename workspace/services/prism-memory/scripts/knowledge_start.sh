@@ -9,6 +9,7 @@ source "$ROOT_DIR/scripts/prism-env.sh"
 load_prism_env
 ensure_prism_python
 export_prism_defaults
+ensure_prism_space_config
 
 "$ROOT_DIR/.venv/bin/python" scripts/knowledge_promote_inbox.py
 "$ROOT_DIR/.venv/bin/python" -m community_knowledge validate --base superprism_poc --space raidguild
