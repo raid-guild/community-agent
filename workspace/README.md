@@ -33,10 +33,12 @@ Recommended commands from `workspace/`:
 - `npm run pm2:start:all` is a compatibility alias for `npm run pm2:start`
 - `npm run pm2:reload` reloads the current ecosystem after rebuilds or env changes
 - `npm run pm2:stop` stops the managed processes
+- `npm run pm2:status` shows the current PM2 process table
 - `npm run pm2:logs` tails logs across the ecosystem
+- `bash scripts/pm2w.sh <pm2-args>` runs the repo-local PM2 binary directly without needing `pm2` on your shell `PATH`
 - `npm run start:runtime` runs `pm2-runtime` in the foreground for container-style startup
 
-The PM2 entrypoints and `scripts/start-all.sh` now share the same startup path: they load `.env` and `.env.local`, run a full-stack runtime preflight, resolve the bundled PM2 binaries from `workspace/node_modules/.bin` before falling back to `PATH`, and then start every bundled service together. In daemon mode, `scripts/pm2-ensure.sh` now resurrects the saved PM2 process list when available, falls back to `ecosystem.config.cjs` when it is not, and runs `pm2 save --force` afterward so future daemon starts reuse the same PM2 state instead of minting a fresh unsaved daemon. If required secrets are missing or `npm install` / `npm run bootstrap` has not been run yet, startup fails once with an actionable message instead of entering a PM2 crash loop.
+The PM2 entrypoints and `scripts/start-all.sh` now share the same startup path: they load `.env` and `.env.local`, run a full-stack runtime preflight, and route all PM2 calls through `scripts/pm2w.sh`, which resolves the bundled binaries from `workspace/node_modules/.bin` before falling back to `PATH`. In daemon mode, `scripts/pm2-ensure.sh` now resurrects the saved PM2 process list when available, falls back to `ecosystem.config.cjs` when it is not, and runs `pm2 save --force` afterward so future daemon starts reuse the same PM2 state instead of minting a fresh unsaved daemon. If required secrets are missing or `npm install` / `npm run bootstrap` has not been run yet, startup fails once with an actionable message instead of entering a PM2 crash loop.
 
 The manifest-style `bash scripts/start-all.sh runtime` path no longer requires a global PM2 install as long as workspace dependencies have been installed.
 

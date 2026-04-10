@@ -20,10 +20,10 @@
     "start:runtime": "bash scripts/start-all.sh runtime",
     "pm2:start": "bash scripts/start-all.sh daemon",
     "pm2:start:all": "bash scripts/start-all.sh daemon",
-    "pm2:reload": "pm2 reload ecosystem.config.cjs --update-env",
-    "pm2:stop": "sh -c 'pm2 delete prism-agent-api >/dev/null 2>&1 || true; pm2 delete prism-agent-site >/dev/null 2>&1 || true; pm2 delete prism-agent-discord-bot >/dev/null 2>&1 || true; pm2 delete prism-agent-prism-memory >/dev/null 2>&1 || true; pm2 delete prism-agent-prism-memory-workers >/dev/null 2>&1 || true'",
-    "pm2:status": "pm2 ls",
-    "pm2:logs": "pm2 logs --lines 100"
+    "pm2:reload": "bash scripts/pm2w.sh reload ecosystem.config.cjs --update-env",
+    "pm2:stop": "bash scripts/pm2-stop.sh",
+    "pm2:status": "bash scripts/pm2w.sh ls",
+    "pm2:logs": "bash scripts/pm2w.sh logs --lines 100"
   },
   "dependencies": {
     "@types/multer": "^2.1.0",
