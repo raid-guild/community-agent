@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "bootstrap": "bash scripts/bootstrap.sh",
-    "build": "tsc -p tsconfig.json",
+    "build": "bash scripts/build-root.sh",
     "migrate": "tsx src/cli/migrate.ts",
     "seed": "tsx src/cli/seed.ts",
     "seed:profiles": "tsx src/cli/seed-profiles.ts",
